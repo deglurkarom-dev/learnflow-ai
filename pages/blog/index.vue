@@ -1,34 +1,34 @@
 <template>
-  <div class="py-12 bg-[#070A13]">
+  <div class="py-12 bg-[#09090B]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Header -->
-      <div class="mb-12 space-y-2 text-center max-w-2xl mx-auto">
+      <div class="mb-10 space-y-1.5 text-center max-w-2xl mx-auto">
         <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Prismic Headless CMS Integration</span>
-        <h1 class="font-display text-3xl font-extrabold text-white">LearnFlow Engineering Blog</h1>
-        <p class="text-slate-400 text-sm">
-          Technical insights on Vue 3, Nuxt 3 Nitro routes, technical SEO, and AI content systems.
+        <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-white">LearnFlow Engineering Blog</h1>
+        <p class="text-zinc-400 text-xs">
+          Technical insights on Vue 3 Composition API, Nuxt 3 Nitro routes, technical SEO, and AI content systems.
         </p>
       </div>
 
       <!-- Blog Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <article 
           v-for="post in posts" 
           :key="post.id" 
-          class="glass-card rounded-2xl overflow-hidden border border-slate-800 flex flex-col group"
+          class="ui-card p-0 rounded-xl overflow-hidden flex flex-col group"
         >
-          <div class="aspect-video overflow-hidden bg-slate-900">
+          <div class="aspect-video overflow-hidden bg-zinc-900">
             <img 
               :src="post.coverImage" 
               :alt="post.title" 
-              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300 ease-out"
             />
           </div>
 
-          <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+          <div class="p-5 flex-1 flex flex-col justify-between space-y-3">
             <div>
-              <div class="flex items-center gap-3 text-xs text-slate-400 mb-3">
-                <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-300 font-semibold border border-brand-500/20">
+              <div class="flex items-center gap-2.5 text-xs text-zinc-400 mb-2">
+                <span class="px-2 py-0.5 rounded-md bg-brand-950/80 text-brand-300 font-semibold border border-brand-800/60 text-[11px]">
                   {{ post.category }}
                 </span>
                 <span>•</span>
@@ -38,18 +38,18 @@
               </div>
 
               <NuxtLink :to="`/blog/${post.slug}`" class="block group-hover:text-brand-300 transition-colors">
-                <h2 class="text-xl font-bold text-white mb-2 leading-snug">{{ post.title }}</h2>
+                <h2 class="text-base font-bold text-white mb-1.5 leading-snug">{{ post.title }}</h2>
               </NuxtLink>
 
-              <p class="text-slate-400 text-xs line-clamp-3 leading-relaxed">
+              <p class="text-zinc-400 text-xs line-clamp-3 leading-relaxed">
                 {{ post.excerpt }}
               </p>
             </div>
 
-            <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between">
+            <div class="pt-3 border-t border-zinc-800/80 flex items-center justify-between">
               <div class="flex items-center gap-2">
-                <img :src="post.authorAvatar" class="w-7 h-7 rounded-full object-cover" />
-                <span class="text-xs text-slate-300 font-medium">{{ post.authorName }}</span>
+                <img :src="post.authorAvatar" class="w-6 h-6 rounded-full object-cover border border-zinc-700" />
+                <span class="text-xs text-zinc-300 font-medium">{{ post.authorName }}</span>
               </div>
 
               <NuxtLink :to="`/blog/${post.slug}`" class="text-xs font-semibold text-brand-400 hover:text-brand-300">

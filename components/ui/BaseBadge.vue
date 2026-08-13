@@ -24,20 +24,20 @@ const props = withDefaults(defineProps<{
 const variantClasses = computed(() => {
   switch (props.variant) {
     case 'emerald':
-      return 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30';
+      return 'bg-emerald-950/60 text-emerald-300 border-emerald-800/60';
     case 'amber':
-      return 'bg-amber-500/10 text-amber-400 border-amber-500/30';
+      return 'bg-amber-950/60 text-amber-300 border-amber-800/60';
     case 'slate':
-      return 'bg-slate-800/80 text-slate-300 border-slate-700';
+      return 'bg-zinc-800/80 text-zinc-300 border-zinc-700/80';
     case 'rose':
-      return 'bg-rose-500/10 text-rose-400 border-rose-500/30';
+      return 'bg-rose-950/60 text-rose-300 border-rose-800/60';
     case 'brand':
     default:
-      return 'bg-brand-500/10 text-brand-300 border-brand-500/30';
+      return 'bg-brand-950/80 text-brand-300 border-brand-800/60';
   }
 });
 
 const sizeClasses = computed(() => {
-  return props.size === 'sm' ? 'px-2 py-0.5 text-xs' : 'px-3 py-1 text-xs';
+  return props.size === 'sm' ? 'px-2 py-0.5 text-[11px]' : 'px-2.5 py-1 text-xs';
 });
 </script>

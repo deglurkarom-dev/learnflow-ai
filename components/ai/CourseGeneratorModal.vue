@@ -1,63 +1,63 @@
 <template>
   <BaseModal :is-open="isOpen" title="AI Course & Module Generator" @close="$emit('close')">
-    <div class="space-y-5">
-      <p class="text-xs text-slate-400">
-        Enter your target topic, audience, and timeline. The AI engine will generate a multi-module course curriculum complete with lessons and interactive quizzes.
+    <div class="space-y-4">
+      <p class="text-xs text-zinc-400">
+        Enter target topic, audience, and duration. The AI engine will generate a multi-module course curriculum complete with lessons and interactive quizzes.
       </p>
 
-      <div class="space-y-4">
+      <div class="space-y-3.5">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Course Topic</label>
+          <label class="block text-xs font-medium text-zinc-300 mb-1">Course Topic</label>
           <input
             v-model="form.topic"
             type="text"
             placeholder="e.g. Introduction to Cybersecurity, Advanced Nuxt 3 Patterns..."
-            class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500"
+            class="ui-input w-full px-3.5 py-2 text-xs"
           />
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
+        <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Target Audience</label>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">Target Audience</label>
             <input
               v-model="form.audience"
               type="text"
               placeholder="e.g. Beginner Developers"
-              class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500"
+              class="ui-input w-full px-3.5 py-2 text-xs"
             />
           </div>
 
           <div>
-            <label class="block text-xs font-semibold text-slate-300 mb-1">Course Duration</label>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">Course Duration</label>
             <input
               v-model="form.duration"
               type="text"
               placeholder="e.g. 4 weeks, 10 hours"
-              class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500"
+              class="ui-input w-full px-3.5 py-2 text-xs"
             />
           </div>
         </div>
       </div>
 
       <!-- Generated Result Preview -->
-      <div v-if="result" class="mt-6 pt-4 border-t border-slate-800 space-y-4">
+      <div v-if="result" class="mt-5 pt-4 border-t border-zinc-800 space-y-3">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">✓ AI Outline Ready</span>
-          <span class="text-xs text-slate-400">{{ result.modules.length }} Modules Generated</span>
+          <span class="text-xs font-semibold text-emerald-400">✓ AI Outline Generated</span>
+          <span class="text-xs text-zinc-400">{{ result.modules.length }} Modules</span>
         </div>
 
-        <div class="p-4 bg-slate-950/80 border border-slate-800 rounded-xl space-y-3">
-          <h4 class="text-base font-bold text-white">{{ result.title }}</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">{{ result.subtitle }}</p>
+        <div class="p-4 bg-zinc-900/80 border border-zinc-800 rounded-xl space-y-2.5">
+          <h4 class="text-sm font-bold text-white">{{ result.title }}</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">{{ result.subtitle }}</p>
 
           <div class="space-y-2 pt-2">
             <div 
               v-for="(mod, i) in result.modules" 
               :key="i"
-              class="p-3 bg-slate-900/60 rounded-lg border border-slate-800/80"
+              class="p-2.5 bg-zinc-950/80 rounded-lg border border-zinc-800"
             >
               <p class="text-xs font-bold text-brand-300">{{ mod.title }}</p>
-              <ul class="mt-1 space-y-1 pl-4 list-disc text-xs text-slate-400">
+              <ul class="mt-1 space-y-1 pl-4 list-disc text-xs text-zinc-400">
                 <li v-for="(les, j) in mod.lessons" :key="j">
                   {{ les.title }} ({{ les.durationMinutes }} mins)
                 </li>
@@ -78,7 +78,7 @@
         :disabled="!form.topic" 
         @click="handleGenerate"
       >
-        Generate Course with AI
+        Generate Course
       </BaseButton>
       <BaseButton 
         v-else 
@@ -86,7 +86,7 @@
         size="sm" 
         @click="publishCourse"
       >
-        Publish Course to CMS
+        Publish to CMS
       </BaseButton>
     </template>
   </BaseModal>

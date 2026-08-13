@@ -1,15 +1,15 @@
 <template>
-  <div class="py-12 bg-[#070A13]">
+  <div class="py-12 bg-[#09090B]">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <NuxtLink to="/blog" class="text-xs font-semibold text-brand-400 hover:underline inline-flex items-center gap-1 mb-8">
+      <NuxtLink to="/blog" class="text-xs font-semibold text-brand-400 hover:underline inline-flex items-center gap-1 mb-6">
         ← Back to Blog Articles
       </NuxtLink>
 
-      <article class="space-y-8">
+      <article class="space-y-6">
         <!-- Article Header -->
-        <div class="space-y-4">
-          <div class="flex items-center gap-3 text-xs text-slate-400">
-            <span class="px-2.5 py-0.5 rounded-full bg-brand-500/10 text-brand-300 font-semibold border border-brand-500/20">
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5 text-xs text-zinc-400">
+            <span class="px-2 py-0.5 rounded-md bg-brand-950/80 text-brand-300 font-semibold border border-brand-800/60 text-[11px]">
               {{ article.category }}
             </span>
             <span>•</span>
@@ -18,26 +18,26 @@
             <span>{{ article.readTimeMinutes }} min read</span>
           </div>
 
-          <h1 class="font-display text-3xl sm:text-5xl font-black text-white leading-tight">
+          <h1 class="font-display text-2xl sm:text-4xl font-extrabold text-white leading-tight">
             {{ article.title }}
           </h1>
 
-          <div class="flex items-center gap-3 pt-4 border-t border-slate-800">
-            <img :src="article.authorAvatar" class="w-10 h-10 rounded-full object-cover" />
+          <div class="flex items-center gap-3 pt-3 border-t border-zinc-800">
+            <img :src="article.authorAvatar" class="w-9 h-9 rounded-full object-cover border border-zinc-700" />
             <div>
-              <p class="text-sm font-bold text-white">{{ article.authorName }}</p>
-              <p class="text-xs text-slate-400">{{ article.authorRole }}</p>
+              <p class="text-xs font-bold text-white">{{ article.authorName }}</p>
+              <p class="text-[11px] text-zinc-400">{{ article.authorRole }}</p>
             </div>
           </div>
         </div>
 
         <!-- Featured Cover Image -->
-        <div class="aspect-video rounded-3xl overflow-hidden bg-slate-900 border border-slate-800">
+        <div class="aspect-video rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800">
           <img :src="article.coverImage" :alt="article.title" class="w-full h-full object-cover" />
         </div>
 
         <!-- Markdown Content -->
-        <div class="prose prose-invert max-w-none text-slate-300 text-sm sm:text-base leading-relaxed whitespace-pre-line">
+        <div class="prose prose-invert max-w-none text-zinc-300 text-xs sm:text-sm leading-relaxed whitespace-pre-line">
           {{ article.contentMarkdown }}
         </div>
       </article>

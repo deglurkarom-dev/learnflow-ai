@@ -1,9 +1,9 @@
 <template>
-  <div class="space-y-8">
+  <div class="space-y-6">
     <div class="flex items-center justify-between">
       <div>
         <span class="text-xs font-semibold uppercase tracking-wider text-brand-400">Course Management</span>
-        <h1 class="text-2xl font-bold text-white mt-1">CMS Courses Catalog</h1>
+        <h1 class="text-xl font-bold text-white mt-0.5">CMS Courses Catalog</h1>
       </div>
       <BaseButton variant="primary" size="sm" @click="openCourseModal = true">
         ✨ Generate Course with AI
@@ -11,24 +11,24 @@
     </div>
 
     <!-- Course List Table -->
-    <div class="glass-panel rounded-2xl border border-slate-800 overflow-hidden">
-      <table class="w-full text-left text-xs text-slate-300">
-        <thead class="bg-slate-900/80 text-slate-400 uppercase font-semibold text-[11px] border-b border-slate-800">
+    <div class="ui-card p-0 rounded-xl border border-zinc-800 overflow-hidden">
+      <table class="w-full text-left text-xs text-zinc-300">
+        <thead class="bg-zinc-900 text-zinc-400 uppercase font-semibold text-[11px] border-b border-zinc-800">
           <tr>
-            <th class="px-6 py-4">Title</th>
-            <th class="px-6 py-4">Category</th>
-            <th class="px-6 py-4">Modules</th>
-            <th class="px-6 py-4">Status</th>
-            <th class="px-6 py-4 text-right">Actions</th>
+            <th class="px-5 py-3">Title</th>
+            <th class="px-5 py-3">Category</th>
+            <th class="px-5 py-3">Modules</th>
+            <th class="px-5 py-3">Status</th>
+            <th class="px-5 py-3 text-right">Actions</th>
           </tr>
         </thead>
-        <tbody class="divide-y divide-slate-800/80">
-          <tr v-for="c in courses" :key="c.id" class="hover:bg-slate-900/40 transition">
-            <td class="px-6 py-4 font-bold text-white max-w-xs truncate">{{ c.title }}</td>
-            <td class="px-6 py-4"><BaseBadge variant="brand" size="sm">{{ c.category }}</BaseBadge></td>
-            <td class="px-6 py-4">{{ c.modules.length }} Modules</td>
-            <td class="px-6 py-4"><span class="text-emerald-400 font-semibold">● Published</span></td>
-            <td class="px-6 py-4 text-right">
+        <tbody class="divide-y divide-zinc-800/80">
+          <tr v-for="c in courses" :key="c.id" class="hover:bg-zinc-900/40 transition-colors">
+            <td class="px-5 py-3.5 font-bold text-white max-w-xs truncate">{{ c.title }}</td>
+            <td class="px-5 py-3.5"><BaseBadge variant="brand" size="sm">{{ c.category }}</BaseBadge></td>
+            <td class="px-5 py-3.5">{{ c.modules.length }} Modules</td>
+            <td class="px-5 py-3.5"><span class="text-emerald-400 font-semibold">● Published</span></td>
+            <td class="px-5 py-3.5 text-right">
               <NuxtLink :to="`/courses/${c.slug}`" class="text-brand-400 hover:underline">
                 View →
               </NuxtLink>

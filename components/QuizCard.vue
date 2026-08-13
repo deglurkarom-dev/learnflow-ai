@@ -1,69 +1,71 @@
 <template>
-  <div class="glass-card rounded-2xl p-6 border border-brand-500/20 shadow-glow">
-    <div class="flex items-center justify-between pb-4 border-b border-slate-800">
+  <div class="ui-card p-6 border-zinc-800">
+    <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
       <div>
-        <span class="text-xs font-semibold uppercase tracking-wider text-brand-400">Interactive Quiz</span>
-        <h4 class="text-lg font-bold text-white mt-1">{{ quiz.title }}</h4>
+        <span class="text-[11px] font-bold uppercase tracking-wider text-brand-400">Interactive Quiz</span>
+        <h4 class="text-base font-bold text-white mt-0.5">{{ quiz.title }}</h4>
       </div>
-      <span class="px-3 py-1 text-xs font-semibold rounded-full bg-brand-500/10 text-brand-300 border border-brand-500/20">
-        Passing Score: {{ quiz.passingScore }}%
+      <span class="px-2.5 py-0.5 text-xs font-semibold rounded-md bg-brand-950/80 text-brand-300 border border-brand-800/60">
+        Passing: {{ quiz.passingScore }}%
       </span>
     </div>
 
     <!-- Quiz Completed State -->
-    <div v-if="submitted" class="py-8 text-center">
+    <div v-if="submitted" class="py-6 text-center space-y-4">
       <div 
         :class="[
-          'w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl font-bold mb-4',
+          'w-12 h-12 rounded-full mx-auto flex items-center justify-center text-lg font-bold',
           scorePercentage >= quiz.passingScore 
-            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40' 
-            : 'bg-rose-500/20 text-rose-400 border border-rose-500/40'
+            ? 'bg-emerald-950/80 text-emerald-400 border border-emerald-800/80' 
+            : 'bg-rose-950/80 text-rose-400 border border-rose-800/80'
         ]"
       >
         {{ scorePercentage >= quiz.passingScore ? '✓' : '✕' }}
       </div>
 
-      <h5 class="text-xl font-bold text-white mb-1">
-        {{ scorePercentage >= quiz.passingScore ? 'Quiz Passed!' : 'Try Again' }}
-      </h5>
-      <p class="text-slate-400 text-sm mb-6">
-        You scored <span class="font-bold text-white">{{ scorePercentage }}%</span> ({{ correctCount }}/{{ quiz.questions.length }} correct)
-      </p>
+      <div>
+        <h5 class="text-base font-bold text-white">
+          {{ scorePercentage >= quiz.passingScore ? 'Quiz Passed!' : 'Try Again' }}
+        </h5>
+        <p class="text-zinc-400 text-xs mt-1">
+          Score: <strong class="text-white">{{ scorePercentage }}%</strong> ({{ correctCount }}/{{ quiz.questions.length }} correct)
+        </p>
+      </div>
 
-      <BaseButton variant="secondary" size="md" @click="resetQuiz">
+      <BaseButton variant="secondary" size="sm" @click="resetQuiz">
         Retake Quiz
       </BaseButton>
     </div>
 
     <!-- Active Question -->
-    <div v-else-if="currentQuestion" class="py-6">
-      <div class="flex items-center justify-between text-xs text-slate-400 mb-3">
+    <div v-else-if="currentQuestion" class="py-5 space-y-4">
+      <div class="flex items-center justify-between text-xs text-zinc-400">
         <span>Question {{ currentIndex + 1 }} of {{ quiz.questions.length }}</span>
-        <span>Score Weight: {{ Math.round(100 / quiz.questions.length) }}%</span>
+        <span>Weight: {{ Math.round(100 / quiz.questions.length) }}%</span>
       </div>
 
-      <h5 class="text-base font-semibold text-white mb-5 leading-relaxed">
+      <h5 class="text-sm font-semibold text-white leading-relaxed">
         {{ currentQuestion.prompt }}
       </h5>
 
       <!-- Options -->
-      <div class="space-y-3 mb-6">
+      <div class="space-y-2.5">
         <button
           v-for="opt in currentQuestion.options"
           :key="opt.id"
           :class="[
-            'w-full text-left p-4 rounded-xl text-sm font-medium border transition-all duration-200 flex items-center justify-between',
+            'w-full text-left p-3.5 rounded-lg text-xs font-medium border transition-colors flex items-center justify-between cursor-pointer interactive-press select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500',
             selectedOptionId === opt.id
-              ? 'bg-brand-600/20 border-brand-500 text-white shadow-sm'
-              : 'bg-slate-900/60 border-slate-800 text-slate-300 hover:border-slate-700 hover:text-white'
+              ? 'bg-brand-950/60 border-brand-500 text-white'
+              : 'bg-zinc-900/60 border-zinc-800 text-zinc-300 hover:border-zinc-700 hover:text-white'
           ]"
           @click="selectOption(opt.id)"
         >
           <span>{{ opt.text }}</span>
           <span 
             :class="[
-              'w-5 h-5 rounded-full border flex items-center justify-center text-xs',
-              selectedOptionId === opt.id ? 'border-brand-400 bg-brand-500 text-white' : 'border-slate-700'
+              'w-4 h-4 rounded-full border flex items-center justify-center text-[10px]',
+              selectedOptionId === opt.id ? 'border-brand-400 bg-brand-500 text-white' : 'border-zinc-700'
             ]"
           >
             <span v-if="selectedOptionId === opt.id">✓</span>
@@ -72,18 +74,18 @@
       </div>
 
       <!-- Action Footer -->
-      <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+      <div class="flex justify-between items-center pt-3 border-t border-zinc-800">
         <button
           v-if="currentIndex > 0"
-          class="text-xs font-semibold text-slate-400 hover:text-white"
+          class="text-xs font-medium text-zinc-400 hover:text-white transition-colors"
           @click="currentIndex--"
         >
-          ← Previous Question
+          ← Previous
         </button>
 
         <BaseButton
           variant="primary"
-          size="md"
+          size="sm"
           :disabled="!selectedOptionId"
           class="ml-auto"
           @click="nextQuestion"

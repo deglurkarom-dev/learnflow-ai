@@ -1,26 +1,26 @@
 <template>
   <BaseModal :is-open="isOpen" title="AI SEO & GEO Metadata Assistant" @close="$emit('close')">
-    <div class="space-y-5">
-      <p class="text-xs text-slate-400">
+    <div class="space-y-4">
+      <p class="text-xs text-zinc-400">
         Automatically generate technical SEO titles, meta descriptions, target keyword arrays, OpenGraph cards, and Schema.org FAQ JSON-LD snippet tags.
       </p>
 
-      <div class="space-y-4">
+      <div class="space-y-3">
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Page or Course Title</label>
+          <label class="block text-xs font-medium text-zinc-300 mb-1">Page or Course Title</label>
           <input
             v-model="form.topicOrTitle"
             type="text"
             placeholder="e.g. Modern JavaScript Fundamentals"
-            class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500"
+            class="ui-input w-full px-3.5 py-2 text-xs"
           />
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-slate-300 mb-1">Content Type</label>
+          <label class="block text-xs font-medium text-zinc-300 mb-1">Content Type</label>
           <select
             v-model="form.contentType"
-            class="w-full px-3.5 py-2.5 bg-slate-900 border border-slate-800 rounded-xl text-sm text-white focus:outline-none focus:border-brand-500"
+            class="ui-input w-full px-3.5 py-2 text-xs"
           >
             <option value="Course">Course</option>
             <option value="Blog">Blog Article</option>
@@ -30,22 +30,22 @@
       </div>
 
       <!-- Result View -->
-      <div v-if="result" class="mt-6 pt-4 border-t border-slate-800 space-y-4">
-        <div class="p-4 bg-slate-950/90 border border-slate-800 rounded-xl space-y-3">
+      <div v-if="result" class="mt-5 pt-4 border-t border-zinc-800 space-y-3">
+        <div class="p-4 bg-zinc-900/80 border border-zinc-800 rounded-xl space-y-3">
           <div>
             <span class="text-[10px] font-bold uppercase text-brand-400 tracking-wider">Generated SEO Title (&lt;title&gt;)</span>
             <input 
               v-model="result.seoTitle" 
-              class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-white" 
+              class="ui-input w-full mt-1 px-3 py-1.5 text-xs" 
             />
           </div>
 
           <div>
-            <span class="text-[10px] font-bold uppercase text-brand-400 tracking-wider">Meta Description (155 chars)</span>
+            <span class="text-[10px] font-bold uppercase text-brand-400 tracking-wider">Meta Description</span>
             <textarea 
               v-model="result.metaDescription" 
               rows="2"
-              class="w-full mt-1 bg-slate-900 border border-slate-800 rounded-lg px-3 py-1.5 text-xs text-slate-300"
+              class="ui-input w-full mt-1 px-3 py-1.5 text-xs"
             ></textarea>
           </div>
 
@@ -60,7 +60,7 @@
               <span 
                 v-for="(kw, i) in result.keywords" 
                 :key="i"
-                class="px-2 py-0.5 bg-amber-500/10 text-amber-300 border border-amber-500/20 text-[11px] rounded-md"
+                class="px-2 py-0.5 bg-amber-950/60 text-amber-300 border border-amber-800/60 text-[11px] rounded-md"
               >
                 {{ kw }}
               </span>

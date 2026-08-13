@@ -1,14 +1,13 @@
 <template>
-  <div class="glass-card rounded-2xl overflow-hidden flex flex-col group h-full">
-    <!-- Thumbnail Image Container -->
-    <div class="relative aspect-video overflow-hidden bg-slate-900">
+  <div class="ui-card p-0 rounded-xl overflow-hidden flex flex-col group h-full">
+    <!-- Image Header -->
+    <div class="relative aspect-video overflow-hidden bg-zinc-900">
       <img 
         :src="course.thumbnail" 
         :alt="course.title"
-        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        class="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300 ease-out"
         loading="lazy"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-transparent to-transparent opacity-60"></div>
       
       <!-- Category Badge -->
       <div class="absolute top-3 left-3">
@@ -19,44 +18,42 @@
 
       <!-- Difficulty Tag -->
       <div class="absolute top-3 right-3">
-        <span class="px-2.5 py-0.5 text-xs font-semibold rounded-full bg-slate-900/80 backdrop-blur-md text-slate-300 border border-slate-700">
+        <span class="px-2 py-0.5 text-[11px] font-semibold rounded-md bg-zinc-950/80 backdrop-blur-xs text-zinc-300 border border-zinc-800">
           {{ course.difficulty }}
         </span>
       </div>
     </div>
 
-    <!-- Card Body -->
-    <div class="p-5 flex-1 flex flex-col justify-between">
+    <!-- Content Body -->
+    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
       <div>
         <div class="flex items-center gap-2 text-xs text-amber-400 font-medium mb-2">
           <span>★ {{ course.rating }}</span>
-          <span class="text-slate-500">({{ course.reviewCount }} reviews)</span>
-          <span class="text-slate-600">•</span>
-          <span class="text-slate-400">{{ course.durationHours }} hrs</span>
+          <span class="text-zinc-500">({{ course.reviewCount }} reviews)</span>
+          <span class="text-zinc-600">•</span>
+          <span class="text-zinc-400">{{ course.durationHours }} hrs</span>
         </div>
 
-        <NuxtLink :to="`/courses/${course.slug}`" class="block group-hover:text-brand-400 transition-colors">
-          <h3 class="text-lg font-bold text-white line-clamp-2 leading-snug mb-2">
+        <NuxtLink :to="`/courses/${course.slug}`" class="block group-hover:text-brand-300 transition-colors">
+          <h3 class="text-base font-bold text-white line-clamp-2 leading-snug mb-1.5">
             {{ course.title }}
           </h3>
         </NuxtLink>
 
-        <p class="text-slate-400 text-xs line-clamp-2 mb-4 leading-relaxed">
+        <p class="text-zinc-400 text-xs line-clamp-2 leading-relaxed">
           {{ course.subtitle }}
         </p>
       </div>
 
-      <!-- Footer Instructor Info & CTA -->
-      <div class="pt-4 border-t border-slate-800/80 flex items-center justify-between mt-auto">
+      <!-- Footer Instructor Info & Action -->
+      <div class="pt-3.5 border-t border-zinc-800/80 flex items-center justify-between mt-auto">
         <div class="flex items-center gap-2.5">
           <img 
             :src="course.instructorAvatar" 
             :alt="course.instructorName"
-            class="w-7 h-7 rounded-full object-cover border border-slate-700" 
+            class="w-6 h-6 rounded-full object-cover border border-zinc-700" 
           />
-          <div class="text-xs">
-            <p class="text-slate-200 font-medium leading-none">{{ course.instructorName }}</p>
-          </div>
+          <span class="text-xs text-zinc-300 font-medium">{{ course.instructorName }}</span>
         </div>
 
         <NuxtLink 
