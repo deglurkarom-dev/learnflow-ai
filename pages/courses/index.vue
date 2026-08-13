@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Page Header -->
       <div class="mb-8 space-y-1.5">
-        <span class="text-xs font-semibold uppercase tracking-wider text-brand-400">Curriculum Catalog</span>
+        <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Curriculum Catalog</span>
         <h1 class="font-display text-2xl sm:text-3xl font-extrabold text-white">Explore Courses & Skill Pathways</h1>
         <p class="text-zinc-400 text-xs max-w-2xl">
           Browse interactive masterclasses powered by Vue 3, Nuxt 3, TypeScript, Cybersecurity, and AI content strategy.
@@ -24,7 +24,7 @@
         <span>Showing <strong class="text-white">{{ filteredCourses.length }}</strong> course(s)</span>
         <button 
           v-if="searchQuery || selectedCategory !== 'All' || selectedDifficulty !== 'All'"
-          class="text-brand-400 hover:underline"
+          class="text-indigo-400 hover:underline"
           @click="resetFilters"
         >
           Reset Filters
@@ -41,7 +41,7 @@
       </div>
 
       <!-- Empty State -->
-      <div v-else class="py-14 text-center ui-card my-8">
+      <div v-else class="py-14 text-center surface-card my-8">
         <div class="w-12 h-12 rounded-full bg-zinc-900 mx-auto flex items-center justify-center text-zinc-500 text-xl mb-3 border border-zinc-800">🔍</div>
         <h3 class="text-base font-bold text-white mb-1">No courses found</h3>
         <p class="text-zinc-400 text-xs max-w-xs mx-auto mb-5">Try adjusting your search query or reset your filters.</p>

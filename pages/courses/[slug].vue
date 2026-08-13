@@ -11,7 +11,7 @@
       </nav>
 
       <!-- Course Header Hero -->
-      <div class="ui-card p-6 sm:p-8 border-zinc-800 mb-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="surface-card p-6 sm:p-8 border-zinc-800 mb-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2 space-y-3.5">
           <div class="flex flex-wrap items-center gap-2">
             <BaseBadge variant="brand">{{ course.category }}</BaseBadge>
@@ -40,7 +40,7 @@
         </div>
 
         <!-- Right Side Enrollment Card -->
-        <div class="ui-card p-5 bg-zinc-900 border-zinc-800 flex flex-col justify-between space-y-5">
+        <div class="surface-card p-5 bg-zinc-900 border-zinc-800 flex flex-col justify-between space-y-5">
           <div class="space-y-2.5 text-xs text-zinc-300">
             <div class="flex justify-between pb-2 border-b border-zinc-800">
               <span>Total Modules:</span>
@@ -80,10 +80,10 @@
         <!-- Left 2 Cols: Lesson Viewer / Active Content -->
         <div class="lg:col-span-2 space-y-6">
           <!-- Active Lesson Container -->
-          <div v-if="activeLesson" class="ui-card p-6 sm:p-8 space-y-5">
+          <div v-if="activeLesson" class="surface-card p-6 sm:p-8 space-y-5">
             <div class="flex items-center justify-between pb-4 border-b border-zinc-800">
               <div>
-                <span class="text-[10px] font-bold text-brand-400 uppercase tracking-wider">Active Lesson</span>
+                <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider">Active Lesson</span>
                 <h3 class="text-lg font-bold text-white mt-0.5">{{ activeLesson.title }}</h3>
               </div>
               <BaseButton 
@@ -110,7 +110,7 @@
             </div>
           </div>
 
-          <div v-else class="ui-card p-8 text-center text-zinc-400 text-xs">
+          <div v-else class="surface-card p-8 text-center text-zinc-400 text-xs">
             Select a lesson from the module list on the right to start learning.
           </div>
         </div>
@@ -125,7 +125,7 @@
           <div 
             v-for="mod in course.modules" 
             :key="mod.id" 
-            class="ui-card p-4 space-y-2.5"
+            class="surface-card p-4 space-y-2.5"
           >
             <div>
               <h4 class="text-xs font-bold text-white">{{ mod.title }}</h4>
@@ -137,9 +137,9 @@
                 v-for="les in mod.lessons"
                 :key="les.id"
                 :class="[
-                  'w-full text-left px-2.5 py-1.5 rounded-md text-xs flex items-center justify-between transition-colors cursor-pointer interactive-press select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500',
+                  'w-full text-left px-2.5 py-1.5 rounded-md text-xs flex items-center justify-between transition-colors cursor-pointer interactive-press select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500',
                   activeLesson?.id === les.id 
-                    ? 'bg-brand-950/80 text-white font-semibold border border-brand-800/60' 
+                    ? 'bg-indigo-950/80 text-white font-semibold border border-indigo-800/60' 
                     : 'bg-zinc-900/60 text-zinc-300 hover:bg-zinc-850 hover:text-white'
                 ]"
                 @click="activeLesson = les"
@@ -159,7 +159,7 @@
 
   <div v-else class="py-16 text-center text-zinc-400">
     <h2 class="text-xl font-bold text-white">Course Not Found</h2>
-    <NuxtLink to="/courses" class="text-brand-400 hover:underline text-xs mt-2 inline-block">Return to Catalog</NuxtLink>
+    <NuxtLink to="/courses" class="text-indigo-400 hover:underline text-xs mt-2 inline-block">Return to Catalog</NuxtLink>
   </div>
 </template>
 

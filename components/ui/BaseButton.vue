@@ -3,7 +3,7 @@
     :type="type"
     :disabled="disabled || loading"
     :class="[
-      'inline-flex items-center justify-center font-medium transition-all duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer interactive-press select-none',
+      'inline-flex items-center justify-center font-medium transition-all duration-150 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[#09090B] disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer interactive-press select-none',
       variantClasses,
       sizeClasses,
       fullWidth ? 'w-full' : ''
@@ -50,26 +50,26 @@ defineEmits<{
 const variantClasses = computed(() => {
   switch (props.variant) {
     case 'primary':
-      return 'bg-brand-600 hover:bg-brand-500 text-white border border-brand-500/40 shadow-sm';
+      return 'bg-indigo-600 hover:bg-indigo-500 text-white border border-indigo-500/40 shadow-sm';
     case 'emerald':
       return 'bg-emerald-600 hover:bg-emerald-500 text-white border border-emerald-500/40 shadow-sm';
     case 'secondary':
       return 'bg-zinc-800 hover:bg-zinc-700 text-zinc-100 border border-zinc-700/80';
     case 'outline':
-      return 'bg-zinc-900/60 border border-zinc-700 hover:border-zinc-500 text-zinc-200 hover:text-white';
+      return 'bg-zinc-900/80 border border-zinc-700 hover:border-zinc-500 text-zinc-200 hover:text-white';
     case 'ghost':
       return 'bg-transparent hover:bg-zinc-800/60 text-zinc-300 hover:text-white';
     case 'danger':
       return 'bg-rose-600 hover:bg-rose-500 text-white border border-rose-500/40';
     default:
-      return 'bg-brand-600 text-white';
+      return 'bg-indigo-600 text-white';
   }
 });
 
 const sizeClasses = computed(() => {
   switch (props.size) {
     case 'sm':
-      return 'px-3 py-1.5 text-xs rounded-md gap-1.5';
+      return 'px-3 py-1.5 text-xs rounded-md gap-1.5 font-medium';
     case 'lg':
       return 'px-5 py-3 text-sm rounded-lg gap-2 font-semibold';
     case 'md':

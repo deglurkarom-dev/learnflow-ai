@@ -5,10 +5,10 @@
         <!-- Col 1: Brand Info -->
         <div class="md:col-span-2 space-y-3">
           <div class="flex items-center gap-2">
-            <div class="w-7 h-7 rounded-md bg-brand-600 flex items-center justify-center text-white font-bold text-xs">
+            <div class="w-7 h-7 rounded-md bg-indigo-600 flex items-center justify-center text-white font-bold text-xs">
               LF
             </div>
-            <span class="font-display font-bold text-lg text-white">LearnFlow<span class="text-brand-400">.AI</span></span>
+            <span class="font-display font-bold text-lg text-white">LearnFlow<span class="text-indigo-400">.AI</span></span>
           </div>
           <p class="text-zinc-400 text-xs max-w-sm leading-relaxed">
             Next-generation AI learning & marketing platform built with Vue 3, Nuxt 3, Prismic CMS, and automated technical SEO workflows.

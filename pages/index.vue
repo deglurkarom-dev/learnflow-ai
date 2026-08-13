@@ -10,7 +10,7 @@
           </div>
 
           <h1 class="font-display text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-[1.15]">
-            AI-Powered Learning & <span class="text-brand-400">Marketing Platform</span>
+            AI-Powered Learning & <span class="text-indigo-400">Marketing Platform</span>
           </h1>
 
           <p class="text-zinc-400 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto">
@@ -20,7 +20,7 @@
           <div class="flex flex-wrap items-center justify-center gap-3 pt-2">
             <NuxtLink to="/courses">
               <BaseButton variant="primary" size="lg">
-                Explore Course Catalog
+                Explore Courses Catalog
                 <span>→</span>
               </BaseButton>
             </NuxtLink>
@@ -31,7 +31,7 @@
         </div>
 
         <!-- Interactive AI Sandbox Hero Card -->
-        <div class="mt-14 max-w-4xl mx-auto ui-card p-6 sm:p-8 rounded-2xl border border-zinc-800 shadow-card">
+        <div class="mt-14 max-w-4xl mx-auto surface-card p-6 sm:p-8 rounded-2xl border border-zinc-800 shadow-card">
           <div class="flex items-center justify-between pb-4 border-b border-zinc-800/80 mb-5">
             <div class="flex items-center gap-2">
               <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
@@ -39,15 +39,15 @@
               <span class="w-2.5 h-2.5 rounded-full bg-zinc-700"></span>
               <span class="ml-2 text-xs font-mono text-zinc-500">learnflow-ai-sandbox</span>
             </div>
-            <span class="text-[11px] font-semibold text-brand-400 bg-brand-950/80 px-2 py-0.5 rounded border border-brand-800/60">Live Preview</span>
+            <span class="text-[11px] font-semibold text-indigo-400 bg-indigo-950/80 px-2 py-0.5 rounded border border-indigo-800/60">Live Preview</span>
           </div>
 
           <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
             <div 
-              class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-brand-500/50 transition-colors cursor-pointer interactive-press"
+              class="p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-indigo-500/50 transition-colors cursor-pointer interactive-press"
               @click="openCourseModal = true"
             >
-              <div class="w-7 h-7 rounded-md bg-brand-950 text-brand-400 border border-brand-800/60 flex items-center justify-center font-bold text-xs mb-3">01</div>
+              <div class="w-7 h-7 rounded-md bg-indigo-950 text-indigo-400 border border-indigo-800/60 flex items-center justify-center font-bold text-xs mb-3">01</div>
               <h3 class="text-xs font-bold text-white mb-1">AI Course Creator</h3>
               <p class="text-xs text-zinc-400">Generate full multi-module curriculum, lessons & quizzes instantly.</p>
             </div>
@@ -78,25 +78,25 @@
     <section class="py-16 bg-[#09090B] border-b border-zinc-800/80">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12 space-y-2">
-          <span class="text-xs font-semibold uppercase tracking-wider text-brand-400">Built for Modern SaaS Squads</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Built for Modern SaaS Squads</span>
           <h2 class="font-display text-2xl font-bold text-white">Why LearnFlow AI?</h2>
           <p class="text-zinc-400 text-xs">Vue 3 Composition API, Nuxt 3 Nitro performance, and AI content automation seamlessly integrated.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="ui-card p-6">
-            <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-brand-400 flex items-center justify-center text-lg mb-4 font-bold">⚡</div>
+          <div class="surface-card p-6">
+            <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-indigo-400 flex items-center justify-center text-lg mb-4 font-bold">⚡</div>
             <h3 class="text-base font-bold text-white mb-1.5">Prismic CMS Integration</h3>
             <p class="text-zinc-400 text-xs leading-relaxed">Marketing teams manage custom page slices and blog posts while engineers retain full Vue 3 TypeScript control.</p>
           </div>
 
-          <div class="ui-card p-6">
+          <div class="surface-card p-6">
             <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-emerald-400 flex items-center justify-center text-lg mb-4 font-bold">🔍</div>
             <h3 class="text-base font-bold text-white mb-1.5">Technical SEO Engine</h3>
             <p class="text-zinc-400 text-xs leading-relaxed">Dynamic meta tags, OpenGraph cards, XML sitemaps, and Schema.org JSON-LD structured data generated automatically.</p>
           </div>
 
-          <div class="ui-card p-6">
+          <div class="surface-card p-6">
             <div class="w-10 h-10 rounded-lg bg-zinc-900 border border-zinc-800 text-amber-400 flex items-center justify-center text-lg mb-4 font-bold">🤖</div>
             <h3 class="text-base font-bold text-white mb-1.5">Triple AI Tool Suite</h3>
             <p class="text-zinc-400 text-xs leading-relaxed">Course generators, copywriters, and SEO tag assistants integrated into Nuxt server routes for maximum velocity.</p>
@@ -113,7 +113,7 @@
             <span class="text-xs font-semibold uppercase tracking-wider text-emerald-400">Curriculum Showcase</span>
             <h2 class="font-display text-2xl font-bold text-white mt-0.5">Featured Courses</h2>
           </div>
-          <NuxtLink to="/courses" class="text-xs font-semibold text-brand-400 hover:text-brand-300 flex items-center gap-1">
+          <NuxtLink to="/courses" class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 flex items-center gap-1">
             View All Courses →
           </NuxtLink>
         </div>
@@ -132,12 +132,12 @@
     <section class="py-16 bg-[#09090B]">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-2xl mx-auto mb-12">
-          <span class="text-xs font-semibold uppercase tracking-wider text-brand-400">Engineering Feedback</span>
+          <span class="text-xs font-semibold uppercase tracking-wider text-indigo-400">Engineering Feedback</span>
           <h2 class="font-display text-2xl font-bold text-white mt-0.5">Trusted by Web & Content Engineers</h2>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          <div class="ui-card p-6">
+          <div class="surface-card p-6">
             <p class="text-zinc-300 text-xs italic mb-4 leading-relaxed">
               "LearnFlow AI mirrors the exact marketing-engineering workflow we use at scale. The Vue 3 Composition API setup and AI SEO assistant saved our content team dozens of manual hours."
             </p>
@@ -150,7 +150,7 @@
             </div>
           </div>
 
-          <div class="ui-card p-6">
+          <div class="surface-card p-6">
             <p class="text-zinc-300 text-xs italic mb-4 leading-relaxed">
               "Having Vitest unit tests, Playwright E2E automation, and Nuxt Nitro server routes out of the box makes this architecture completely enterprise-ready."
             </p>

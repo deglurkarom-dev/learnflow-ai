@@ -2,54 +2,62 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-}
-
 @layer base {
+  :root {
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  }
+
   body {
-    @apply bg-[#09090B] text-zinc-100 font-sans antialiased selection:bg-brand-600 selection:text-white min-h-screen flex flex-col;
+    @apply bg-[#09090B] text-zinc-100 font-sans antialiased selection:bg-indigo-600 selection:text-white min-h-screen flex flex-col;
     color-scheme: dark;
   }
 
-  /* Accessible focus states */
+  /* Accessible Focus Rings */
   *:focus-visible {
-    @apply outline-none ring-2 ring-brand-500 ring-offset-2 ring-offset-[#09090B];
+    @apply outline-none ring-2 ring-indigo-500 ring-offset-2 ring-offset-[#09090B];
   }
 }
 
-/* Polished Card Surface */
-.ui-card {
-  background-color: #121215;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 0.875rem;
-  transition: border-color 180ms var(--ease-out), transform 180ms var(--ease-out), background-color 180ms var(--ease-out);
+/* Premium Surface Cards & Panels */
+.surface-card {
+  background-color: #121216;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  transition: border-color 180ms var(--ease-out), background-color 180ms var(--ease-out), transform 180ms var(--ease-out);
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .ui-card:hover {
-    border-color: rgba(255, 255, 255, 0.16);
-    background-color: #16161a;
+  .surface-card:hover {
+    border-color: rgba(255, 255, 255, 0.18);
+    background-color: #16161c;
   }
 }
 
-/* Form Input Surface */
-.ui-input {
-  background-color: #16161a;
+.surface-input {
+  background-color: #16161c;
   border: 1px solid #27272a;
   color: #f4f4f5;
   border-radius: 0.625rem;
   transition: border-color 150ms var(--ease-out), box-shadow 150ms var(--ease-out);
 }
 
-.ui-input:focus {
+.surface-input:focus {
   outline: none;
   border-color: #6366f1;
   box-shadow: 0 0 0 1px #6366f1;
 }
 
-/* Custom Scrollbar */
+/* Emil Kowalski Button Press Feedback */
+.interactive-press {
+  transition: transform 140ms var(--ease-out), background-color 140ms var(--ease-out), border-color 140ms var(--ease-out);
+}
+
+.interactive-press:active {
+  transform: scale(0.98);
+}
+
+/* Custom Scrollbars */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -68,16 +76,7 @@
   background: #3f3f46;
 }
 
-/* Emil Kowalski Button Active Scale Rule */
-.interactive-press {
-  transition: transform 140ms var(--ease-out), background-color 140ms var(--ease-out), border-color 140ms var(--ease-out);
-}
-
-.interactive-press:active {
-  transform: scale(0.98);
-}
-
-/* Reduced Motion Override */
+/* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
   *,
   ::before,

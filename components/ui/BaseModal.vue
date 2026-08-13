@@ -13,7 +13,7 @@
 
         <!-- Modal Content Container -->
         <div 
-          class="modal-panel relative w-full max-w-2xl bg-[#121215] border border-zinc-800 rounded-2xl shadow-modal overflow-hidden z-10 my-8"
+          class="modal-panel relative w-full max-w-2xl bg-[#121216] border border-zinc-800 rounded-2xl shadow-2xl overflow-hidden z-10 my-8"
         >
           <!-- Header -->
           <div class="flex items-center justify-between px-6 py-4 border-b border-zinc-800/80 bg-zinc-900/60">
@@ -21,7 +21,7 @@
               <slot name="title">{{ title }}</slot>
             </h3>
             <button 
-              class="text-zinc-400 hover:text-white p-1 rounded-md hover:bg-zinc-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-500"
+              class="text-zinc-400 hover:text-white p-1 rounded-md hover:bg-zinc-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
               aria-label="Close dialog"
               @click="$emit('close')"
             >

@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-card p-0 rounded-xl overflow-hidden flex flex-col group h-full">
+  <div class="surface-card p-0 rounded-xl overflow-hidden flex flex-col group h-full">
     <!-- Image Header -->
     <div class="relative aspect-video overflow-hidden bg-zinc-900">
       <img 
@@ -34,7 +34,7 @@
           <span class="text-zinc-400">{{ course.durationHours }} hrs</span>
         </div>
 
-        <NuxtLink :to="`/courses/${course.slug}`" class="block group-hover:text-brand-300 transition-colors">
+        <NuxtLink :to="`/courses/${course.slug}`" class="block group-hover:text-indigo-300 transition-colors">
           <h3 class="text-base font-bold text-white line-clamp-2 leading-snug mb-1.5">
             {{ course.title }}
           </h3>
@@ -58,7 +58,7 @@
 
         <NuxtLink 
           :to="`/courses/${course.slug}`"
-          class="text-xs font-semibold text-brand-400 hover:text-brand-300 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
+          class="text-xs font-semibold text-indigo-400 hover:text-indigo-300 inline-flex items-center gap-1 group-hover:translate-x-0.5 transition-transform"
         >
           Explore
           <span>→</span>
