@@ -27,8 +27,11 @@ test.describe('LearnFlow AI Platform User Flows', () => {
     await page.goto('/');
     
     // Click Role toggle button
-    await page.click('text=Mode: Learner');
-    await expect(page.locator('text=Mode: Admin CMS')).toBeVisible();
+    const modeToggle = page.getByRole('button', { name: /Mode:/ });
+
+    await expect(modeToggle).toHaveText(/Mode: Learner/);
+    await modeToggle.click();
+    await expect(modeToggle).toHaveText(/Mode: Admin CMS/);
 
     // Launch AI Course Generator modal
     await page.click('text=Try AI Course Generator');
