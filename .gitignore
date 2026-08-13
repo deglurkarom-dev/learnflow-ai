@@ -5,3 +5,7 @@ playwright-report/
 test-results/
 .env
 .env.*
+.agents/
+.claude/
+learnflow-ai/
+skills-lock.json
