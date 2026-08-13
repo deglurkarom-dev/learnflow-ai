@@ -5,10 +5,10 @@ const currentUser = ref<User>({
   id: 'usr_1',
   name: 'Alex Morgan',
   email: 'alex.morgan@example.com',
-  role: 'admin',
+  role: 'learner',
   avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=250&q=80',
-  enrolledCourseIds: ['course-1', 'course-2'],
-  completedLessonIds: ['les-101', 'les-102', 'les-201'],
+  enrolledCourseIds: [],
+  completedLessonIds: [],
   streakDays: 5
 });
 
